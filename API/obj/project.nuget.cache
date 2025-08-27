@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dBLEjQYBb2s=",
+  "dgSpecHash": "EDOCTiMIjyo=",
   "success": true,
   "projectFilePath": "/Users/malikabdulmalik/e-commerce-with-dotnet/API/API.csproj",
-  "expectedPackageFiles": [
-    "/Users/malikabdulmalik/.nuget/packages/microsoft.aspnetcore.openapi/10.0.0-preview.7.25380.108/microsoft.aspnetcore.openapi.10.0.0-preview.7.25380.108.nupkg.sha512",
-    "/Users/malikabdulmalik/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

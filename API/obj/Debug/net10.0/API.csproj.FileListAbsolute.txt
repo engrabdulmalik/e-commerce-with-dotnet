@@ -6,15 +6,11 @@
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/bin/Debug/net10.0/API.runtimeconfig.json
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/bin/Debug/net10.0/API.dll
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/bin/Debug/net10.0/API.pdb
-/Users/malikabdulmalik/e-commerce-with-dotnet/API/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
-/Users/malikabdulmalik/e-commerce-with-dotnet/API/bin/Debug/net10.0/Microsoft.OpenApi.dll
-/Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.csproj.AssemblyReference.cache
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/rpswa.dswa.cache.json
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.GeneratedMSBuildEditorConfig.editorconfig
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.AssemblyInfoInputs.cache
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.AssemblyInfo.cs
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.csproj.CoreCompileInputs.cache
-/Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.MvcApplicationPartsAssemblyInfo.cs
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.MvcApplicationPartsAssemblyInfo.cache
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.sourcelink.json
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/rjimswa.dswa.cache.json
@@ -25,7 +21,6 @@
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/staticwebassets.build.json.cache
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/staticwebassets.development.json
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/staticwebassets.build.endpoints.json
-/Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.csproj.Up2Date
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.dll
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/refint/API.dll
 /Users/malikabdulmalik/e-commerce-with-dotnet/API/obj/Debug/net10.0/API.pdb
