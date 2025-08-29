@@ -10,7 +10,7 @@ const addProduct = () => {
 }
 
 useEffect(() => {
- fetch('http://localhost:5000/api/products')
+ fetch('https://localhost:5001/api/products')
  .then(res => res.json())
  .then(data => setProducts(data))
 }, [])
@@ -19,7 +19,10 @@ useEffect(() => {
   
     <>
      <h1>EStore</h1>
-     <button onClick={addProduct}></button>
+      <ul>
+        {products.map(product => <li key={product.id}>{product.name}</li>)}
+      </ul>
+     <button onClick={addProduct}>Add Product</button>
     </>
   )
 }
