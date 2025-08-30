@@ -1,30 +1,31 @@
-import { useEffect, useState } from "react"
-
+import { useEffect, useState } from "react";
+import Catalog from "../../features/catalog/Catalog";
+import { Box, Container, Typography } from "@mui/material";
 
 function App() {
-  
-const [products, setProducts]= useState([])
+  const [products, setProducts] = useState([]);
 
-const addProduct = () => {
-  setProducts(...prevState => [...prevState, {id: products.length + 1, name: `Product ${products.length + 1}`}])
-}
-
-useEffect(() => {
- fetch('https://localhost:5001/api/products')
- .then(res => res.json())
- .then(data => setProducts(data))
-}, [])
+  useEffect(() => {
+    fetch("https://localhost:5001/api/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   return (
-  
-    <>
-     <h1>EStore</h1>
-      <ul>
-        {products.map(product => <li key={product.id}>{product.name}</li>)}
-      </ul>
-     <button onClick={addProduct}>Add Product</button>
-    </>
-  )
+    <Container maxWidth="xl">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height={200}
+        
+        color="green"
+      >
+      <Typography variant="h2">SWANZ</Typography>
+      </Box>
+      <Catalog products={products} />
+    </Container>
+  );
 }
 
-export default App
+export default App;
