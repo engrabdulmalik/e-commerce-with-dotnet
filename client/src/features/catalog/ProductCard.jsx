@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   return (
@@ -40,7 +41,7 @@ function ProductCard({ product }) {
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
         <Button size="small">Add to cart</Button>
-        <Button size="small">View</Button>
+        <Button size="small" component={Link} to={`/catalog/${product.id}`}>View</Button>
       </CardActions>
     </Card>
   );
