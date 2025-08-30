@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Catalog from "../../features/catalog/Catalog";
 import { Box, Container, Typography } from "@mui/material";
+import NavBar from "./NavBar";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -12,19 +13,12 @@ function App() {
   }, []);
 
   return (
-    <Container maxWidth="xl">
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        height={200}
-        
-        color="green"
-      >
-      <Typography variant="h2">SWANZ</Typography>
-      </Box>
-      <Catalog products={products} />
-    </Container>
+    <>
+    <NavBar />
+      <Container maxWidth="xl" sx={{ mt: 12 }}>
+        <Catalog products={products} />
+      </Container>
+    </>
   );
 }
 

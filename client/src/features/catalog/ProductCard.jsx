@@ -6,7 +6,6 @@ import {
   Typography,
   Button,
 } from "@mui/material";
-import React from "react";
 
 function ProductCard({ product }) {
   return (
