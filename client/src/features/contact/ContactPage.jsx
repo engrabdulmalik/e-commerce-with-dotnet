@@ -1,9 +1,5 @@
-import React from 'react'
-
 function ContactPage() {
-  return (
-    <div>ContactPage</div>
-  )
+  return <div>Contact Page</div>;
 }
 
-export default ContactPage
+export default ContactPage;
