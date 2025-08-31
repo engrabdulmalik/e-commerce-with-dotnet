@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useFetchProductDetailsQuery } from "./catalogApi";
 import { useParams } from "react-router-dom";
 import {
   Grid,
@@ -15,17 +15,9 @@ import {
 
 function ProductDetails() {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const { data: product, isLoading } = useFetchProductDetailsQuery(id);
 
-  useEffect(() => {
-    fetch(`https://localhost:5001/api/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data))
-      .catch((error) =>
-        console.error("Error fetching product details:", error)
-      );
-  }, [id]);
-  if (!product) return <h3>Loading...</h3>;
+  if (!product || isLoading) return <h3>Loading...</h3>;
 
   const ProductDetails = [
     { name: "Name", value: product.name },
@@ -37,12 +29,12 @@ function ProductDetails() {
 
   return (
     <>
-      <Grid container spacing={6} maxWidth="lg" sx={{ mx: "auto"}}>
-        <Grid size={6} >
+      <Grid container spacing={6} maxWidth="lg" sx={{ mx: "auto" }}>
+        <Grid size={6}>
           <img
             src={product?.pictureUrl}
             alt={product.name}
-            style={{ width: "100%" ,height:"625px"}}
+            style={{ width: "100%", height: "625px" }}
           />
         </Grid>
         <Grid size={6}>
@@ -52,11 +44,13 @@ function ProductDetails() {
             ${(product.price / 100).toFixed(2)}
           </Typography>
           <TableContainer>
-            <Table sx={{ '& td' : {fontSize: '1.2rem'} }}>
+            <Table sx={{ "& td": { fontSize: "1.2rem" } }}>
               <TableBody>
                 {ProductDetails.map((item, index) => (
                   <TableRow key={index}>
-                    <TableCell sx={{ fontWeight: "bold" }}>{item.name}</TableCell>
+                    <TableCell sx={{ fontWeight: "bold" }}>
+                      {item.name}
+                    </TableCell>
                     <TableCell>{item.value}</TableCell>
                   </TableRow>
                 ))}
@@ -75,7 +69,12 @@ function ProductDetails() {
               />
             </Grid>
             <Grid size={6} sx={{ display: "flex", alignItems: "center" }}>
-              <Button variant="contained" size="large" fullWidth sx={{ height: "55px",ml:2 }} >
+              <Button
+                variant="contained"
+                size="large"
+                fullWidth
+                sx={{ height: "55px", ml: 2 }}
+              >
                 Add to Cart
               </Button>
             </Grid>

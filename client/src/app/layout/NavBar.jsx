@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
+import { LinearProgress } from "@mui/material";
+import { useSelector } from "react-redux";
 const menuLinks = [
   { title: "Catalog", path: "/catalog" },
   { title: "About", path: "/about" },
@@ -27,6 +29,8 @@ const navStyles = {
   "&.active": { color: "secondary.main" },
 };
 function NavBar() {
+  const { isLoading } = useSelector((state) => state.ui);
+  
   return (
     <AppBar position="fixed">
       <Toolbar
@@ -60,6 +64,12 @@ function NavBar() {
           ))}
         </List>
       </Toolbar>
+      {isLoading && (
+        <LinearProgress
+          color="secondary"
+          sx={{ position: "absolute", bottom: 0, width: "100%" }}
+        />
+      )}  
     </AppBar>
   );
 }
