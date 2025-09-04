@@ -1,4 +1,5 @@
 using API.Data;
+using API.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,11 +18,15 @@ builder.Services.AddCors(options =>
         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:3000");
     });
 });
+builder.Services.AddTransient<ExcepetionMiddleware>();
 
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+
+app.UseMiddleware<ExcepetionMiddleware>();
 app.UseCors("CorsPolicy");
 app.MapControllers();
-
 DbInitializer.InitDb(app);
 
 app.Run();
