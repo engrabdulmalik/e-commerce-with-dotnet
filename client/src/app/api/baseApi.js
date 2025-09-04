@@ -20,6 +20,16 @@ export const baseQueryWithErrorHandling = async (args, api, extraOptions) => {
         const responseData = result.error.data;
     switch (originalStatus) {
       case 400:
+        if(typeof responseData === 'string')
+        {
+          toast.error(responseData);
+          break;
+        }
+        else if ('errors' in responseData) {
+          const errorMessages = Object.values(responseData.errors).flat();
+          errorMessages.forEach((message) => toast.error(message));
+          break;
+        }
         toast.error(responseData);
         break;
       case 401:
@@ -31,6 +41,7 @@ export const baseQueryWithErrorHandling = async (args, api, extraOptions) => {
       case 500:
         toast.error(responseData.title);
         break;
+        
       default:
         break;
     }

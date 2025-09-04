@@ -13,6 +13,23 @@ function AboutPage() {
   const [trigger404Error] = useLazyGet404ErrorQuery();
   const [trigger500Error] = useLazyGet500ErrorQuery();
   const [triggerValidationError] = useLazyGetValidationErrorQuery();
+
+ const getValidationError = async () => {
+   try {
+     await triggerValidationError().unwrap();
+   } catch (error) {
+     if (error?.data?.errors) {
+       const errorArray = Object.values(error.data.errors).flat();
+       console.log("Validation Errors:", errorArray);
+       // Or show them in toast
+       // errorArray.forEach((msg) => toast.error(msg));
+     } else {
+       console.log("Unexpected error:", error);
+     }
+   }
+ };
+
+
   return (
     <>
       <Container maxWidth="lg">
@@ -60,8 +77,7 @@ function AboutPage() {
           <Button
             variant="contained"
             size="large"
-            onClick={() =>
-              triggerValidationError().catch((error) => console.log(error))
+            onClick={getValidationError
             }
           >
             Test Validation Error
