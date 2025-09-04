@@ -8,12 +8,18 @@ import "@fontsource/roboto/700.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./app/routes/Routes.jsx"; // Adjust the path if your router is elsewhere
 import { Provider } from "react-redux";
-import { store } from "./app/store/store"; // Adjust the path if your store is elsewhere
+import { store } from "./app/store/store";
+ import { ToastContainer } from "react-toastify"; // Adjust the path if your store is elsewhere
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-    <RouterProvider router={router} />
+      <ToastContainer
+        position="bottom-right"
+        hideProgressBar
+        theme="colored"
+      />
+      <RouterProvider router={router} />
     </Provider>
   </StrictMode>
 );

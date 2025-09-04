@@ -5,7 +5,7 @@ import {
   useLazyGet404ErrorQuery,
   useLazyGet500ErrorQuery,
   useLazyGetValidationErrorQuery,
-} from "../../api/errorsApi"; // Update the path to your actual API slice file
+} from "../../features/About/errorApi"; // Update the path to your actual API slice file
 
 function AboutPage() {
   const [trigger400Error] = useLazyGet400ErrorQuery();
@@ -27,10 +27,9 @@ function AboutPage() {
               trigger400Error().catch((error) => console.log(error))
             }
           >
-            Test 404
+            Test 400
           </Button>
-          <Button size="large">Bad Gateway</Button>
-          <Button size="large">Test 500</Button>
+
           <Button
             variant="contained"
             size="large"

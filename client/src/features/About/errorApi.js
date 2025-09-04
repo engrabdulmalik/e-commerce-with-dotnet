@@ -1,9 +1,9 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { baseQueryErrorHandling } from "../api/baseQueryErrorHandling"; // Adjust the path as needed
+import { baseQueryWithErrorHandling } from "../../app/api/baseApi"; // Adjust the path as needed
 
 export const errorApi = createApi({
   reducerPath: "errorApi",
-  baseQuery: baseQueryErrorHandling,
+  baseQuery: baseQueryWithErrorHandling,
   endpoints: (builder) => ({
     get400Error: builder.query({ query: () => "buggy/bad-request" }),
     get401Error: builder.query({ query: () => "buggy/unauthorized" }),
